@@ -31,24 +31,47 @@
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2025-04-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2025-04-07',
-          end: '2025-04-10'
-        }
-      ]
-    });
+      eventSources: [            
+    {
+	googleCalendarId: 'icoc.org.tw_309aj8t07vhtlbrv2cejn32jvg@group.calendar.google.com',
+	className: '主堂',
+	color: '#c71c22',
+	textColor: 'white'
+    },
+    {
+	googleCalendarId: 'icoc.org.tw_7vapgps46otvmftfvjq9j3hrio@group.calendar.google.com',
+	className: '咖啡區',
+	color: '#73a839',
+	textColor: 'white'
+    },
+    {
+	googleCalendarId: 'icoc.org.tw_bjq10smv6ljg2mb86lfjftu3tk@group.calendar.google.com',
+	className: '地毯教室',
+	color: '#6C6C6D',
+	textColor: 'white'
+    },
+    {
+	googleCalendarId: 'icoc.org.tw_e7gd30fsevdd81930r99frpfmo@group.calendar.google.com',
+	className: '角落教室',
+	color: '#033c73',
+	textColor: 'white'
+    }            
+],
 
+
+eventClick: function(calEvent, jsEvent, view) {	        
+	if (calEvent.url) {
+    window.open(calEvent.url);
+    return false;
+	}
+	    }
+    });
+    calendar.render();
   });
 
 </script>
   
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 $(document).ready(function() {
     $('#calendar').fullCalendar({
@@ -96,10 +119,9 @@ $(document).ready(function() {
         	}
 		    }
     });
-    calendar.render();
 });
 
-</script>
+</script> -->
 
 </head>
 <body>
