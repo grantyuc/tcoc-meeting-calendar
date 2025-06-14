@@ -1,1 +1,425 @@
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTaipei&showPrint=0&showTz=0&title=%E5%8F%B0%E4%B8%AD%E7%A6%8F%E9%9F%B3%E4%B8%AD%E5%BF%83%20-%20%E6%B4%BB%E5%8B%95%E7%A9%BA%E9%96%93%E6%9F%A5%E8%A9%A2%2F%E9%A0%90%E7%B4%84%E7%B3%BB%E7%B5%B1&src=YzhlMWIwNTAzODk1YTZmOTk1OTA2YzA2ZDNhOTZkODcyNjEyNzFhYmNiNTg2MWI4Yzc2YTUyZWFiNGY3YTk1YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NjRlNTg4OWFhODJmMDY1M2YxMTM0YTdjMjAwM2M3Y2RjZDJjM2E2M2EzOTdhNGUzOGNkZWVmNzEyZDhiYWVmNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=N2NlNjdiOGMzMTVjYjc5YjU2NmQ2YmNiYWQ4YWNiYTQ3OTg0ZGFjNTRiZTcxMTU4NGY2NGE4Y2Y2ZjJkOGVjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NDExNmJjYzE3ZDliYTEzYmVhNjUxMTZmMTUwOGIzYThiYWRjZmRmY2UzNmZhMDNmMzFhNTI2YTEyZDZlMGM2MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=OGYzNzM2YmQwMGFlYmQwYjZkZjg4MjhlNTY4ZjFmN2RhODc1ZmRmMzUyODdhZmE4NjRmZjM4YzQ4NDY1Y2ExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NmEwZTE0YmNkZmU2YmVhNDdlMTZiZGRkNTI5M2RjNTEzOGIzN2FmN2FmNTIyM2Y3NmE1NDk2ZTkxZGNmN2Q5ZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZDcwZDFmNzIwMWE4ZDQwMjAxYmQ0MjNlMWU1MDQ5MGQzZjYzMjE1MGJiOWNmYzU2ODcxOTc2NDMzZjBhOGZkOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23ad1457&color=%23d81b60&color=%237986cb&color=%23a79b8e&color=%237986cb&color=%23d81b60&color=%233f51b5" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<script src='fullcalendar/dist/index.global.js'></script>
+<script>
+var calendar = new FullCalendar.Calendar(calendarEl, {
+  // no plugin config required!
+});
+</script>
+
+<script type='text/javascript'>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      googleCalendarApiKey: '<YOUR API KEY>',
+      eventSources: [
+        {
+          googleCalendarId: 'abcd1234@group.calendar.google.com'
+        },
+        {
+          googleCalendarId: 'efgh5678@group.calendar.google.com',
+          className: 'nice-event'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+    		header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				theme: true,
+				selectable: true,
+				eventLimit: true, // allow "more" link when too many events    		
+        googleCalendarApiKey: 'AIzaSyCrOoIlHA6C8dvQ12XAvoARHZZ5pSWdzLA',
+        eventSources: [            
+            {
+                googleCalendarId: 'icoc.org.tw_309aj8t07vhtlbrv2cejn32jvg@group.calendar.google.com',
+                className: '主堂',
+                color: '#c71c22',
+                textColor: 'white'
+            },
+            {
+                googleCalendarId: 'icoc.org.tw_7vapgps46otvmftfvjq9j3hrio@group.calendar.google.com',
+                className: '咖啡區',
+                color: '#73a839',
+                textColor: 'white'
+            },
+            {
+                googleCalendarId: 'icoc.org.tw_bjq10smv6ljg2mb86lfjftu3tk@group.calendar.google.com',
+                className: '地毯教室',
+                color: '#6C6C6D',
+                textColor: 'white'
+            },
+            {
+                googleCalendarId: 'icoc.org.tw_e7gd30fsevdd81930r99frpfmo@group.calendar.google.com',
+                className: '角落教室',
+                color: '#033c73',
+                textColor: 'white'
+            }            
+        ],
+        
+        
+        eventClick: function(calEvent, jsEvent, view) {	        
+	        if (calEvent.url) {
+            window.open(calEvent.url);
+            return false;
+        	}
+		    }
+    });
+});
+
+</script>
+
+<body style="">
+
+
+<!-- topbar starts -->
+<div class="navbar navbar-default" role="navigation">
+	<div class="navbar-inner">
+	  <button type="button" class="navbar-toggle pull-left animated flip">
+	      <span class="sr-only">Toggle navigation</span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="main.php">
+	  	<!--<img alt="Logo" src="images/tcc_logo.jpg" class="hidden-xs"/>-->
+	    <span><font color="#FAC42D">台灣國際基督教會門徒系統</font></span>
+	  </a>
+	
+	  <!-- user dropdown starts -->
+    <div class="btn-group pull-right">
+	    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+	    	<i class="glyphicon glyphicon-user"></i>
+	    	<span class="hidden-sm hidden-xs">陳冠羽</span>
+	      <span class="caret"></span>
+	    </button>
+	    <ul class="dropdown-menu">
+	    	        <li><a href="member_edit.php">編輯個人資料</a></li>        
+        <li><a href="member_change_password_new.php">修改密碼</a></li>
+        <li class="divider"></li>
+                <li><a href="index.php?to_do=logout">登出</a></li>
+	    </ul>
+    </div>
+    <!-- user dropdown ends -->
+	
+    <!-- theme selector starts -->
+    <!--<div class="btn-group pull-right theme-container animated tada">
+      <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <i class="glyphicon glyphicon-tint"></i>
+        <span class="hidden-sm hidden-xs">切換佈景主題</span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" id="themes">
+        <li><a data-value="classic" href="#"><i class="whitespace"></i> Classic</a></li>
+        <li><a data-value="cerulean" href="#"><i class="whitespace"></i> Cerulean</a></li>
+        <li><a data-value="cyborg" href="#"><i class="whitespace"></i> Cyborg</a></li>
+        <li><a data-value="simplex" href="#"><i class="whitespace"></i> Simplex</a></li>
+        <li><a data-value="darkly" href="#"><i class="whitespace"></i> Darkly</a></li>
+        <li><a data-value="lumen" href="#"><i class="whitespace"></i> Lumen</a></li>
+        <li><a data-value="slate" href="#"><i class="whitespace"></i> Slate</a></li>
+        <li><a data-value="spacelab" href="#"><i class="whitespace"></i> Spacelab</a></li>
+        <li><a data-value="united" href="#"><i class="whitespace"></i> United</a></li>
+      </ul>
+    </div>-->
+    <!-- theme selector ends -->
+	
+    <!--<ul class="collapse navbar-collapse nav navbar-nav top-menu">
+      <li><a href="#"><i class="glyphicon glyphicon-globe"></i>測試</a></li>
+      <li class="dropdown">
+        <a href="#" data-toggle="dropdown">
+        	<i class="glyphicon glyphicon-star"></i>測試上方選單 
+        	<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">測試1</a></li>
+          <li><a href="#">測試2</a></li>
+          <li><a href="#">12345</a></li>
+          <li class="divider"></li>
+          <li><a href="#">6789</a></li>
+          <li class="divider"></li>
+          <li><a href="#">5678</a></li>
+        </ul>
+      </li>
+      <li>
+        <form class="navbar-search pull-left">
+          <input placeholder="搜尋框測試" class="search-query form-control col-md-10" name="query" type="text">
+        </form>
+      </li>
+    </ul>-->
+	
+	</div>
+</div>
+<!-- topbar ends -->
+<div class="ch-container">
+	<div class="row">
+        
+	  				
+		<!-- left menu starts -->
+	  <div class="col-sm-2 col-lg-2">
+      <div class="sidebar-nav">
+        <div class="nav-canvas">
+          <div class="nav-sm nav nav-stacked">
+
+          </div>
+          <ul class="nav nav-pills nav-stacked main-menu">
+            <li class="nav-header">選單</li>
+            <li>
+            	<a class="ajax-link" href="main.php">
+            		<i class="glyphicon glyphicon-home"></i>
+            		<span>首頁</span>
+            	</a>
+            </li>
+                        <li class="active">
+            	<a class="ajax-link" href="gc_calendar_list.php">
+            		<i class="glyphicon glyphicon-calendar"></i>
+            		<span>大安福音中心</span>
+            	</a>
+            </li>
+            <li>
+            	<a class="ajax-link" href="ss_gc_calendar_list.php">
+            		<i class="glyphicon glyphicon-calendar"></i>
+            		<span>松山福音中心</span>
+            	</a>
+            </li>
+                        <li>
+            	<a href="devotion_edit_list_new.php">
+            		<i class="glyphicon glyphicon-gift"></i>
+            		<span>奉獻明細</span>
+            	</a>
+            </li>
+            
+                        <!--
+            <li class="accordion">
+              <a href="#">
+              	<i class="glyphicon glyphicon-plus"></i>
+              	<span>我的資料</span>
+              </a>
+              <ul class="nav nav-pills nav-stacked">              	
+	              <li><a href="member_edit.php">編輯修改</a></li>
+	              <li><a href="member_change_password_new.php">修改密碼</a></li>
+	              <li><a href="devotion_edit_list_new.php">奉獻明細</a></li>
+	                            </ul>
+            </li>-->
+            <li class="accordion">
+              <a href="#">
+              	<i class="glyphicon glyphicon-plus"></i>
+              	<span>肢體聯繫</span>
+              </a>
+              <ul class="nav nav-pills nav-stacked">              	
+	              <!--<li><a href="calendar_list.php">各牧區行事曆</a></li>-->
+	              <li><a href="member_contact_list.php">聯絡其他門徒</a></li>
+	              <li><a href="https://www.disciplestoday.org/find-us" target="_blank">國際教會查詢</a></li>
+              </ul>
+            </li>
+            <li class="accordion">
+              <a href="#">
+              	<i class="glyphicon glyphicon-plus"></i>
+              	<span>透明資訊</span>
+              </a>
+              <ul class="nav nav-pills nav-stacked">              	
+	              <li><a href="supervisors_list.php">現任理監事</a></li>
+	              <li><a href="finance_report_list.php">財務報表</a></li>
+	              <li><a href="meeting_list.php">會議記錄</a></li>
+              </ul>
+            </li>
+            <li class="accordion">
+              <a href="#">
+              	<i class="glyphicon glyphicon-plus"></i>
+              	<span>線上選課</span>
+              </a>
+              <ul class="nav nav-pills nav-stacked">
+              		              <li><a href="#" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="未開放">最新選課</a></li>
+	              	              
+	              <li><a href="tcc_class_list.php">選課記錄</a></li>	              
+              </ul>
+            </li>
+            <li class="accordion">
+              <a href="#">
+              	<i class="glyphicon glyphicon-plus"></i>
+              	<span>屬靈資源</span>
+              </a>
+              <ul class="nav nav-pills nav-stacked">              	
+	              <li><a href="http://www.taiwanchurch.org.tw/preach-online/" target="_blank">講道錄影</a></li>
+	              <li><a href="document_list.php">課程教材</a></li>
+	              <li><a href="bible_study_report.php">研經報告</a></li>
+	              <li><a href="issue_feedback.php">議題回應</a></li>
+	              <li><a href="app_list.php">APP下載</a></li>
+              </ul>
+            </li>
+            <li class="accordion">
+              <a href="#">
+              	<i class="glyphicon glyphicon-plus"></i>
+              	<span>表格下載</span>
+              </a>
+              <ul class="nav nav-pills nav-stacked">              	
+	              <li><a href="help_note2.php">家庭補助/獎學金申請</a></li>
+	              <li><a href="help_note1.php">急難救助</a></li>
+	              <li><a href="devotion_note.php">奉獻登記單</a></li>
+	              <li><a href="https://member.taiwanchurch.org.tw/files/Credit_card_ authorization.doc" target="_blank">信用卡奉獻授權書</a></li>
+	              <li>	         
+	              	<a href="https://gofile.me/5qyiC/VSPnATKjd" target="_blank">
+	              		教會請款單
+	              	</a>
+	              </li>
+	              <li><a href="https://gofile.me/5qyiC/CnxuZxKJ6" target="_blank">個人所得簽收單</a></li>
+	              <li><a href="https://gofile.me/5qyiC/hxzs6ima0" target="_blank">會員代表委託書</a></li>
+	              <li><a href="https://gofile.me/5qyiC/kuF9K2pdU" target="_blank">教會新形象CI手冊</a></li>	              
+              </ul>
+            </li>
+                        <li>
+            	<a href="index.php?to_do=logout">
+            		<i class="glyphicon glyphicon-lock"></i>
+            		<span>登出</span>
+            	</a>
+            </li>
+          </ul>
+          <!--<label id="for-is-ajax" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>-->
+        </div>
+      </div>
+	  </div>
+	  <!--/span-->
+	  <!-- left menu ends -->
+
+    <noscript>
+      <div class="alert alert-block col-md-12">
+        <h4 class="alert-heading">Warning!</h4>
+
+        <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+            enabled to use this site.</p>
+      </div>
+    </noscript>
+    <div id="content" class="col-lg-10 col-sm-10">
+    <!-- content starts -->
+    	<div>
+		    <ul class="breadcrumb">
+	        <li>
+	        	<a href="main.php">首頁</a>
+	        </li>
+	        <li>
+	          <a href="gc_calendar_list.php">大安福音中心</a>
+	        </li>
+		    </ul>
+			</div>			
+			
+      
+			<div class="row">
+    		<div class="box col-md-12">
+    			<div class="box-inner">
+    				<div class="box-header well" data-original-title="">
+        			<h2><i class="glyphicon glyphicon-calendar"></i>大安福音中心</h2>
+							<!--
+			        <div class="box-icon">
+		            <a href="#" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-cog"></i></a>
+		            <a href="#" class="btn btn-minimize btn-round btn-default"><i
+		                    class="glyphicon glyphicon-chevron-up"></i></a>
+		            <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+			        </div>-->			        
+    				</div>
+    				
+    				<div class="box-content">  						
+  						<span class="label-default label label-danger">主堂</span>
+  						<span class="label-default label label-success">咖啡區</span>
+  						<span class="label-default label label-primary">地毯教室</span>
+  						<span class="label-default label label-info">角落教室</span>
+  					</div>
+    				
+    				<div class="box-content">    					
+    					<div class="clearfix"></div>
+    					<div id="calendar" class="fc fc-ltr ui-widget"><div class="fc-toolbar"><div class="fc-left"><div class="fc-button-group"><button type="button" class="fc-prev-button ui-button ui-state-default ui-corner-left"><span class="ui-icon ui-icon-circle-triangle-w"></span></button><button type="button" class="fc-next-button ui-button ui-state-default ui-corner-right"><span class="ui-icon ui-icon-circle-triangle-e"></span></button></div><button type="button" class="fc-today-button ui-button ui-state-default ui-corner-left ui-corner-right ui-state-disabled" disabled="">今天</button></div><div class="fc-right"><div class="fc-button-group"><button type="button" class="fc-month-button ui-button ui-state-default ui-corner-left ui-state-active">月</button><button type="button" class="fc-agendaWeek-button ui-button ui-state-default">週</button><button type="button" class="fc-agendaDay-button ui-button ui-state-default ui-corner-right">天</button></div></div><div class="fc-center"><h2>2025年 六月</h2></div><div class="fc-clear"></div></div><div class="fc-view-container" style=""><div class="fc-view fc-month-view fc-basic-view" style=""><table><thead class="fc-head"><tr><td class="fc-head-container ui-widget-header"><div class="fc-row ui-widget-header" style="border-right-width: 1px; margin-right: -0.537475px;"><table><thead><tr><th class="fc-day-header ui-widget-header fc-sun">週日</th><th class="fc-day-header ui-widget-header fc-mon">週一</th><th class="fc-day-header ui-widget-header fc-tue">週二</th><th class="fc-day-header ui-widget-header fc-wed">週三</th><th class="fc-day-header ui-widget-header fc-thu">週四</th><th class="fc-day-header ui-widget-header fc-fri">週五</th><th class="fc-day-header ui-widget-header fc-sat">週六</th></tr></thead></table></div></td></tr></thead><tbody class="fc-body"><tr><td class="ui-widget-content"><div class="fc-scroller fc-day-grid-container" style="overflow: hidden scroll; height: 686.6px;"><div class="fc-day-grid fc-unselectable"><div class="fc-row fc-week ui-widget-content fc-rigid" style="height: 114px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day ui-widget-content fc-sun fc-past" data-date="2025-06-01"></td><td class="fc-day ui-widget-content fc-mon fc-past" data-date="2025-06-02"></td><td class="fc-day ui-widget-content fc-tue fc-past" data-date="2025-06-03"></td><td class="fc-day ui-widget-content fc-wed fc-past" data-date="2025-06-04"></td><td class="fc-day ui-widget-content fc-thu fc-past" data-date="2025-06-05"></td><td class="fc-day ui-widget-content fc-fri fc-past" data-date="2025-06-06"></td><td class="fc-day ui-widget-content fc-sat fc-past" data-date="2025-06-07"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-past" data-date="2025-06-01">1</td><td class="fc-day-number fc-mon fc-past" data-date="2025-06-02">2</td><td class="fc-day-number fc-tue fc-past" data-date="2025-06-03">3</td><td class="fc-day-number fc-wed fc-past" data-date="2025-06-04">4</td><td class="fc-day-number fc-thu fc-past" data-date="2025-06-05">5</td><td class="fc-day-number fc-fri fc-past" data-date="2025-06-06">6</td><td class="fc-day-number fc-sat fc-past" data-date="2025-06-07">7</td></tr></thead><tbody><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=Xzg1MWppZTFuNzRwNDJiYTE2a3M0OGI5azY5MzQ4YmEyOGNvMzBiYTY4Z3EzNmNxNDZvbzQ2aDlwODhfMjAyNTA2MDFUMDEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td rowspan="4"></td><td rowspan="4"></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=ZThiamFwdmZuNDlsdmRybW9lZmlqc2VtZ3NfMjAyNTA2MDRUMTEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td class="fc-event-container" rowspan="4"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=aXBvc3ZkZmtkNW03MHAzOXFlbHAzY3ZpaDggaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">晚上6點00分</span> <span class="fc-title">大腦科學營美宣製作</span></div></a></td><td class="fc-event-container" rowspan="4"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=XzZrc2phZTFnNmwzMzBiYTI4NHM0MmI5azhjcjM2YjlvNzEyamNiOWg2c3MzY2RoajhsMGo4YzI0OGtfMjAyNTA2MDZUMDAzMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">早上8點30分</span> <span class="fc-title">GQT</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=N3BiNWs1MGY0Y2hjNG5mdXFubDhkZHJwcjQgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">早上8點30分</span> <span class="fc-title">GQT</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzZwMjNhZTlrNmgxMzRiOW44bDIzOGI5azhkMmpnYjlvNm9wamliOWo3MTI0NmMyMTcwcmo4ZTFoNzBfMjAyNTA2MDFUMDEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzhwMWs0Y3BoNjkxa2FiYTQ2MHI0YWI5azZvcjQ2YjlvNjkxajhiOW04NG9qZ2UxaDYwc2pjY3EyNmdfMjAyNTA2MDRUMTEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=Z2ZmdDFkNml0cnVtZ3F2cnFhaDd2bHBvdnMgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午10點00分</span> <span class="fc-title">禱告會</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=Xzg1MWppYzFnNjkxamliOWg3MTIzZ2I5azhsMWs0YmExODkzMzhiOW02Z3FqY2M5ZzYxMGs0Y2hvOGdfMjAyNTA2MDFUMDEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=XzZwMzNnaGEyNm9wNGNiYTY4aDFrNmI5azg0cDNpYmEyODhwazJiOW84bDMzNGc5bzZjb2ppY3E1NzBfMjAyNTA2MDRUMTEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td class="fc-event-container" rowspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=ODlyOTlxaWx2YWowOGcwZTE1OTYwZnJya3MgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">下午1點30分</span> <span class="fc-title">職場教育講座/Stella</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=Xzhnc2phZDlrNnNyMzJiYTY4NHEzNGI5azc1MGpnYmEyNmdxajJiYTQ2c280YWNxMjYwbzRhZGhoNjBfMjAyNTA2MDFUMDEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=cDludTZjMTg4dDI1dGgydDlrajNkampxc29fMjAyNTA2MDRUMTEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr></tbody></table></div><div class="fc-highlight-skeleton"><table><tbody><tr><td colspan="2"></td><td class="fc-highlight" colspan="1"></td><td colspan="4"></td></tr></tbody></table></div></div><div class="fc-row fc-week ui-widget-content fc-rigid" style="height: 114px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day ui-widget-content fc-sun fc-past" data-date="2025-06-08"></td><td class="fc-day ui-widget-content fc-mon fc-past" data-date="2025-06-09"></td><td class="fc-day ui-widget-content fc-tue fc-past" data-date="2025-06-10"></td><td class="fc-day ui-widget-content fc-wed fc-past" data-date="2025-06-11"></td><td class="fc-day ui-widget-content fc-thu fc-past" data-date="2025-06-12"></td><td class="fc-day ui-widget-content fc-fri fc-past" data-date="2025-06-13"></td><td class="fc-day ui-widget-content fc-sat fc-today ui-state-highlight" data-date="2025-06-14"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-past" data-date="2025-06-08">8</td><td class="fc-day-number fc-mon fc-past" data-date="2025-06-09">9</td><td class="fc-day-number fc-tue fc-past" data-date="2025-06-10">10</td><td class="fc-day-number fc-wed fc-past" data-date="2025-06-11">11</td><td class="fc-day-number fc-thu fc-past" data-date="2025-06-12">12</td><td class="fc-day-number fc-fri fc-past" data-date="2025-06-13">13</td><td class="fc-day-number fc-sat fc-today ui-state-highlight" data-date="2025-06-14">14</td></tr></thead><tbody><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=Xzg1MWppZTFuNzRwNDJiYTE2a3M0OGI5azY5MzQ4YmEyOGNvMzBiYTY4Z3EzNmNxNDZvbzQ2aDlwODhfMjAyNTA2MDhUMDEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container" rowspan="7"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=NzBvazU4amoxMTMxM3V1ZnNhdm5mOXQ1cWMgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">晚上6點00分</span> <span class="fc-title">美宣組製作</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=bGs4azc0bHR0ZW11OHBlM2M2YWh2bzRtdWcgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">志工訓練</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=ZThiamFwdmZuNDlsdmRybW9lZmlqc2VtZ3NfMjAyNTA2MTFUMTEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td rowspan="7"></td><td class="fc-event-container" rowspan="7"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=XzZrc2phZTFnNmwzMzBiYTI4NHM0MmI5azhjcjM2YjlvNzEyamNiOWg2c3MzY2RoajhsMGo4YzI0OGtfMjAyNTA2MTNUMDAzMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">早上8點30分</span> <span class="fc-title">GQT</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=Nm52bHZ2a3RtMzVlc3FtdDFndHFoNzBhM3MgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午10點00分</span> <span class="fc-title">Parenting 課程</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzZwMjNhZTlrNmgxMzRiOW44bDIzOGI5azhkMmpnYjlvNm9wamliOWo3MTI0NmMyMTcwcmo4ZTFoNzBfMjAyNTA2MDhUMDEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container" rowspan="6"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=NDFmNnVuMTMybGNqc2luYWZwcjFncDJlYm8gaWNvYy5vcmcudHdfN3ZhcGdwczQ2b3R2bWZ0ZnZqcTlqM2hyaW9AZw" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">志工訓練</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzhwMWs0Y3BoNjkxa2FiYTQ2MHI0YWI5azZvcjQ2YjlvNjkxajhiOW04NG9qZ2UxaDYwc2pjY3EyNmdfMjAyNTA2MTFUMTEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=OHZyYWlscGdrcXVic29tbms4Mm04cDZpMmsgaWNvYy5vcmcudHdfYmpxMTBzbXY2bGpnMm1iODZsZmpmdHUzdGtAZw" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">上午10點00分</span> <span class="fc-title">Parenting課程</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=Xzg1MWppYzFnNjkxamliOWg3MTIzZ2I5azhsMWs0YmExODkzMzhiOW02Z3FqY2M5ZzYxMGs0Y2hvOGdfMjAyNTA2MDhUMDEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=XzZwMzNnaGEyNm9wNGNiYTY4aDFrNmI5azg0cDNpYmEyODhwazJiOW84bDMzNGc5bzZjb2ppY3E1NzBfMjAyNTA2MTFUMTEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td class="fc-event-container" rowspan="5"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=dmpzOXE1dDduaDkwc3JlNjlpdGxob2xib28gaWNvYy5vcmcudHdfN3ZhcGdwczQ2b3R2bWZ0ZnZqcTlqM2hyaW9AZw" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">上午10點00分</span> <span class="fc-title">Parenting課程</span></div></a></td></tr><tr><td class="fc-event-container fc-limited"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=Xzhnc2phZDlrNnNyMzJiYTY4NHEzNGI5azc1MGpnYmEyNmdxajJiYTQ2c280YWNxMjYwbzRhZGhoNjBfMjAyNTA2MDhUMDEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-more-cell" rowspan="1"><div><a class="fc-more">+4 更多</a></div></td><td class="fc-event-container" rowspan="4"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=cDludTZjMTg4dDI1dGgydDlrajNkampxc29fMjAyNTA2MTFUMTEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr><tr class="fc-limited"><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=czliaGhzNG9yNHFvaWM2dHJhZm1haDJnMjAgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">中午12點00分</span> <span class="fc-title">畢業生拍照</span></div></a></td></tr><tr class="fc-limited"><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=cXVxNG8yZXNxMjVuOGRzaDEwZWt0YjhkYzQgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">下午1點00分</span> <span class="fc-title">南區帶領團隊開會</span></div></a></td></tr><tr class="fc-limited"><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=OWFvN2phanVnczlnZXU0bHByODU5b2RnMGcgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">下午2點00分</span> <span class="fc-title">實習小組長訓練</span></div></a></td></tr></tbody></table></div></div><div class="fc-row fc-week ui-widget-content fc-rigid" style="height: 114px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day ui-widget-content fc-sun fc-future" data-date="2025-06-15"></td><td class="fc-day ui-widget-content fc-mon fc-future" data-date="2025-06-16"></td><td class="fc-day ui-widget-content fc-tue fc-future" data-date="2025-06-17"></td><td class="fc-day ui-widget-content fc-wed fc-future" data-date="2025-06-18"></td><td class="fc-day ui-widget-content fc-thu fc-future" data-date="2025-06-19"></td><td class="fc-day ui-widget-content fc-fri fc-future" data-date="2025-06-20"></td><td class="fc-day ui-widget-content fc-sat fc-future" data-date="2025-06-21"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-future" data-date="2025-06-15">15</td><td class="fc-day-number fc-mon fc-future" data-date="2025-06-16">16</td><td class="fc-day-number fc-tue fc-future" data-date="2025-06-17">17</td><td class="fc-day-number fc-wed fc-future" data-date="2025-06-18">18</td><td class="fc-day-number fc-thu fc-future" data-date="2025-06-19">19</td><td class="fc-day-number fc-fri fc-future" data-date="2025-06-20">20</td><td class="fc-day-number fc-sat fc-future" data-date="2025-06-21">21</td></tr></thead><tbody><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=Xzg1MWppZTFuNzRwNDJiYTE2a3M0OGI5azY5MzQ4YmEyOGNvMzBiYTY4Z3EzNmNxNDZvbzQ2aDlwODhfMjAyNTA2MTVUMDEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td rowspan="4"></td><td rowspan="4"></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=ZThiamFwdmZuNDlsdmRybW9lZmlqc2VtZ3NfMjAyNTA2MThUMTEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td rowspan="4"></td><td class="fc-event-container" rowspan="4"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=XzZrc2phZTFnNmwzMzBiYTI4NHM0MmI5azhjcjM2YjlvNzEyamNiOWg2c3MzY2RoajhsMGo4YzI0OGtfMjAyNTA2MjBUMDAzMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">早上8點30分</span> <span class="fc-title">GQT</span></div></a></td><td rowspan="4"></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzZwMjNhZTlrNmgxMzRiOW44bDIzOGI5azhkMmpnYjlvNm9wamliOWo3MTI0NmMyMTcwcmo4ZTFoNzBfMjAyNTA2MTVUMDEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzhwMWs0Y3BoNjkxa2FiYTQ2MHI0YWI5azZvcjQ2YjlvNjkxajhiOW04NG9qZ2UxaDYwc2pjY3EyNmdfMjAyNTA2MThUMTEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=Xzg1MWppYzFnNjkxamliOWg3MTIzZ2I5azhsMWs0YmExODkzMzhiOW02Z3FqY2M5ZzYxMGs0Y2hvOGdfMjAyNTA2MTVUMDEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=XzZwMzNnaGEyNm9wNGNiYTY4aDFrNmI5azg0cDNpYmEyODhwazJiOW84bDMzNGc5bzZjb2ppY3E1NzBfMjAyNTA2MThUMTEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=Xzhnc2phZDlrNnNyMzJiYTY4NHEzNGI5azc1MGpnYmEyNmdxajJiYTQ2c280YWNxMjYwbzRhZGhoNjBfMjAyNTA2MTVUMDEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=cDludTZjMTg4dDI1dGgydDlrajNkampxc29fMjAyNTA2MThUMTEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr></tbody></table></div></div><div class="fc-row fc-week ui-widget-content fc-rigid" style="height: 114px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day ui-widget-content fc-sun fc-future" data-date="2025-06-22"></td><td class="fc-day ui-widget-content fc-mon fc-future" data-date="2025-06-23"></td><td class="fc-day ui-widget-content fc-tue fc-future" data-date="2025-06-24"></td><td class="fc-day ui-widget-content fc-wed fc-future" data-date="2025-06-25"></td><td class="fc-day ui-widget-content fc-thu fc-future" data-date="2025-06-26"></td><td class="fc-day ui-widget-content fc-fri fc-future" data-date="2025-06-27"></td><td class="fc-day ui-widget-content fc-sat fc-future" data-date="2025-06-28"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-future" data-date="2025-06-22">22</td><td class="fc-day-number fc-mon fc-future" data-date="2025-06-23">23</td><td class="fc-day-number fc-tue fc-future" data-date="2025-06-24">24</td><td class="fc-day-number fc-wed fc-future" data-date="2025-06-25">25</td><td class="fc-day-number fc-thu fc-future" data-date="2025-06-26">26</td><td class="fc-day-number fc-fri fc-future" data-date="2025-06-27">27</td><td class="fc-day-number fc-sat fc-future" data-date="2025-06-28">28</td></tr></thead><tbody><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=Xzg1MWppZTFuNzRwNDJiYTE2a3M0OGI5azY5MzQ4YmEyOGNvMzBiYTY4Z3EzNmNxNDZvbzQ2aDlwODhfMjAyNTA2MjJUMDEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td rowspan="5"></td><td rowspan="5"></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=ZThiamFwdmZuNDlsdmRybW9lZmlqc2VtZ3NfMjAyNTA2MjVUMTEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td rowspan="5"></td><td class="fc-event-container" rowspan="5"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=XzZrc2phZTFnNmwzMzBiYTI4NHM0MmI5azhjcjM2YjlvNzEyamNiOWg2c3MzY2RoajhsMGo4YzI0OGtfMjAyNTA2MjdUMDAzMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">早上8點30分</span> <span class="fc-title">GQT</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=dDY2YWRjdG0wMDc0MGw1MTUwZjI5YTYxMzggaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午10點00分</span> <span class="fc-title">Parenting課程</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzZwMjNhZTlrNmgxMzRiOW44bDIzOGI5azhkMmpnYjlvNm9wamliOWo3MTI0NmMyMTcwcmo4ZTFoNzBfMjAyNTA2MjJUMDEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzhwMWs0Y3BoNjkxa2FiYTQ2MHI0YWI5azZvcjQ2YjlvNjkxajhiOW04NG9qZ2UxaDYwc2pjY3EyNmdfMjAyNTA2MjVUMTEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=Z3FvYjA2bGkwOG41M24zZ2txaWJpcWpmajQgaWNvYy5vcmcudHdfYmpxMTBzbXY2bGpnMm1iODZsZmpmdHUzdGtAZw" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">上午10點00分</span> <span class="fc-title">Parenting課程</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=Xzg1MWppYzFnNjkxamliOWg3MTIzZ2I5azhsMWs0YmExODkzMzhiOW02Z3FqY2M5ZzYxMGs0Y2hvOGdfMjAyNTA2MjJUMDEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=XzZwMzNnaGEyNm9wNGNiYTY4aDFrNmI5azg0cDNpYmEyODhwazJiOW84bDMzNGc5bzZjb2ppY3E1NzBfMjAyNTA2MjVUMTEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=ZjZqZTZ0ajBvNmo2NHFpY3IxMmR2YWc1ZDAgaWNvYy5vcmcudHdfN3ZhcGdwczQ2b3R2bWZ0ZnZqcTlqM2hyaW9AZw" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">上午10點00分</span> <span class="fc-title">Parenting課程</span></div></a></td></tr><tr><td class="fc-event-container fc-limited"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=Xzhnc2phZDlrNnNyMzJiYTY4NHEzNGI5azc1MGpnYmEyNmdxajJiYTQ2c280YWNxMjYwbzRhZGhoNjBfMjAyNTA2MjJUMDEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-more-cell" rowspan="1"><div><a class="fc-more">+2 更多</a></div></td><td class="fc-event-container" rowspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=cDludTZjMTg4dDI1dGgydDlrajNkampxc29fMjAyNTA2MjVUMTEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td class="fc-event-container fc-limited"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=NzdvNGkycXFpYm43N2xidGhjdmxjcWRmNmsgaWNvYy5vcmcudHdfN3ZhcGdwczQ2b3R2bWZ0ZnZqcTlqM2hyaW9AZw" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">下午1點20分</span> <span class="fc-title">樂齡活動</span></div></a></td><td class="fc-more-cell" rowspan="1"><div><a class="fc-more">+2 更多</a></div></td></tr><tr class="fc-limited"><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=aDJ2cmFybTk4OXRoZW84NGhrczJ1MGhna3MgaWNvYy5vcmcudHdfN3ZhcGdwczQ2b3R2bWZ0ZnZqcTlqM2hyaW9AZw" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">下午1點30分</span> <span class="fc-title">又嘉一年慶生</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=MDg0YzhocTY5dnRsc2FrYWFhYWJ0NDJudTAgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">下午1點30分</span> <span class="fc-title">樂齡</span></div></a></td></tr></tbody></table></div></div><div class="fc-row fc-week ui-widget-content fc-rigid" style="height: 114px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day ui-widget-content fc-sun fc-future" data-date="2025-06-29"></td><td class="fc-day ui-widget-content fc-mon fc-future" data-date="2025-06-30"></td><td class="fc-day ui-widget-content fc-tue fc-other-month fc-future" data-date="2025-07-01"></td><td class="fc-day ui-widget-content fc-wed fc-other-month fc-future" data-date="2025-07-02"></td><td class="fc-day ui-widget-content fc-thu fc-other-month fc-future" data-date="2025-07-03"></td><td class="fc-day ui-widget-content fc-fri fc-other-month fc-future" data-date="2025-07-04"></td><td class="fc-day ui-widget-content fc-sat fc-other-month fc-future" data-date="2025-07-05"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-future" data-date="2025-06-29">29</td><td class="fc-day-number fc-mon fc-future" data-date="2025-06-30">30</td><td class="fc-day-number fc-tue fc-other-month fc-future" data-date="2025-07-01">1</td><td class="fc-day-number fc-wed fc-other-month fc-future" data-date="2025-07-02">2</td><td class="fc-day-number fc-thu fc-other-month fc-future" data-date="2025-07-03">3</td><td class="fc-day-number fc-fri fc-other-month fc-future" data-date="2025-07-04">4</td><td class="fc-day-number fc-sat fc-other-month fc-future" data-date="2025-07-05">5</td></tr></thead><tbody><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=Xzg1MWppZTFuNzRwNDJiYTE2a3M0OGI5azY5MzQ4YmEyOGNvMzBiYTY4Z3EzNmNxNDZvbzQ2aDlwODhfMjAyNTA2MjlUMDEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td rowspan="7"></td><td rowspan="7"></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=ZThiamFwdmZuNDlsdmRybW9lZmlqc2VtZ3NfMjAyNTA3MDJUMTEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td rowspan="7"></td><td class="fc-event-container" rowspan="7"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=XzZrc2phZTFnNmwzMzBiYTI4NHM0MmI5azhjcjM2YjlvNzEyamNiOWg2c3MzY2RoajhsMGo4YzI0OGtfMjAyNTA3MDRUMDAzMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">早上8點30分</span> <span class="fc-title">GQT</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=b2pzMjMzMTIwN2Ruc3J2N2tzN2R0aDdiNHMgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">早上8點30分</span> <span class="fc-title">GQT</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzZwMjNhZTlrNmgxMzRiOW44bDIzOGI5azhkMmpnYjlvNm9wamliOWo3MTI0NmMyMTcwcmo4ZTFoNzBfMjAyNTA2MjlUMDEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzhwMWs0Y3BoNjkxa2FiYTQ2MHI0YWI5azZvcjQ2YjlvNjkxajhiOW04NG9qZ2UxaDYwc2pjY3EyNmdfMjAyNTA3MDJUMTEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td class="fc-event-container" rowspan="6"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=YXJqN2ExOXJvbDBhdDQ4bzYwdmhmcTMzOTAgaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午10點00分</span> <span class="fc-title">禱告會</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=Xzg1MWppYzFnNjkxamliOWg3MTIzZ2I5azhsMWs0YmExODkzMzhiOW02Z3FqY2M5ZzYxMGs0Y2hvOGdfMjAyNTA2MjlUMDEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=XzZwMzNnaGEyNm9wNGNiYTY4aDFrNmI5azg0cDNpYmEyODhwazJiOW84bDMzNGc5bzZjb2ppY3E1NzBfMjAyNTA3MDJUMTEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr><tr><td class="fc-event-container fc-limited"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=Xzhnc2phZDlrNnNyMzJiYTY4NHEzNGI5azc1MGpnYmEyNmdxajJiYTQ2c280YWNxMjYwbzRhZGhoNjBfMjAyNTA2MjlUMDEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-more-cell" rowspan="1"><div><a class="fc-more">+4 更多</a></div></td><td class="fc-event-container" rowspan="4"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=cDludTZjMTg4dDI1dGgydDlrajNkampxc29fMjAyNTA3MDJUMTEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr><tr class="fc-limited"><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=ajV0MWs3Mmx2aHU1YWp1bHRwNjczbGZjaDggaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">下午1點30分</span> <span class="fc-title">寶渴夢活動</span></div></a></td></tr><tr class="fc-limited"><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=ajFmbWJmYmFkOGdjdmI0MzE3ZHQ4Z3J1MDAgaWNvYy5vcmcudHdfYmpxMTBzbXY2bGpnMm1iODZsZmpmdHUzdGtAZw" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">下午1點30分</span> <span class="fc-title">寶渴夢活動</span></div></a></td></tr><tr class="fc-limited"><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=NWgxMHFkcmU1bm1pNTk4NTIxamwwZzRlZDQgaWNvYy5vcmcudHdfN3ZhcGdwczQ2b3R2bWZ0ZnZqcTlqM2hyaW9AZw" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">下午1點30分</span> <span class="fc-title">寶渴夢活動</span></div></a></td></tr></tbody></table></div></div><div class="fc-row fc-week ui-widget-content fc-rigid" style="height: 116px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day ui-widget-content fc-sun fc-other-month fc-future" data-date="2025-07-06"></td><td class="fc-day ui-widget-content fc-mon fc-other-month fc-future" data-date="2025-07-07"></td><td class="fc-day ui-widget-content fc-tue fc-other-month fc-future" data-date="2025-07-08"></td><td class="fc-day ui-widget-content fc-wed fc-other-month fc-future" data-date="2025-07-09"></td><td class="fc-day ui-widget-content fc-thu fc-other-month fc-future" data-date="2025-07-10"></td><td class="fc-day ui-widget-content fc-fri fc-other-month fc-future" data-date="2025-07-11"></td><td class="fc-day ui-widget-content fc-sat fc-other-month fc-future" data-date="2025-07-12"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-other-month fc-future" data-date="2025-07-06">6</td><td class="fc-day-number fc-mon fc-other-month fc-future" data-date="2025-07-07">7</td><td class="fc-day-number fc-tue fc-other-month fc-future" data-date="2025-07-08">8</td><td class="fc-day-number fc-wed fc-other-month fc-future" data-date="2025-07-09">9</td><td class="fc-day-number fc-thu fc-other-month fc-future" data-date="2025-07-10">10</td><td class="fc-day-number fc-fri fc-other-month fc-future" data-date="2025-07-11">11</td><td class="fc-day-number fc-sat fc-other-month fc-future" data-date="2025-07-12">12</td></tr></thead><tbody><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=Xzg1MWppZTFuNzRwNDJiYTE2a3M0OGI5azY5MzQ4YmEyOGNvMzBiYTY4Z3EzNmNxNDZvbzQ2aDlwODhfMjAyNTA3MDZUMDEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td rowspan="4"></td><td rowspan="4"></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=ZThiamFwdmZuNDlsdmRybW9lZmlqc2VtZ3NfMjAyNTA3MDlUMTEwMDAwWiBpY29jLm9yZy50d18zMDlhajh0MDd2aHRsYnJ2MmNlam4zMmp2Z0Bn" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td><td rowspan="4"></td><td class="fc-event-container" rowspan="4"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=XzZrc2phZTFnNmwzMzBiYTI4NHM0MmI5azhjcjM2YjlvNzEyamNiOWg2c3MzY2RoajhsMGo4YzI0OGtfMjAyNTA3MTFUMDAzMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">早上8點30分</span> <span class="fc-title">GQT</span></div></a></td><td class="fc-event-container" rowspan="4"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 主堂" href="https://www.google.com/calendar/event?eid=MnU0NWkwZ202ZmY2bHA1NjZtaGswZXBxOTggaWNvYy5vcmcudHdfMzA5YWo4dDA3dmh0bGJydjJjZWpuMzJqdmdAZw" style="background-color:#c71c22;border-color:#c71c22;color:white"><div class="fc-content"><span class="fc-time">上午10點00分</span> <span class="fc-title">教會財務管理課程</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzZwMjNhZTlrNmgxMzRiOW44bDIzOGI5azhkMmpnYjlvNm9wamliOWo3MTI0NmMyMTcwcmo4ZTFoNzBfMjAyNTA3MDZUMDEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 角落教室" href="https://www.google.com/calendar/event?eid=XzhwMWs0Y3BoNjkxa2FiYTQ2MHI0YWI5azZvcjQ2YjlvNjkxajhiOW04NG9qZ2UxaDYwc2pjY3EyNmdfMjAyNTA3MDlUMTEwMDAwWiBpY29jLm9yZy50d19lN2dkMzBmc2V2ZGQ4MTkzMHI5OWZycGZtb0Bn" style="background-color:#033c73;border-color:#033c73;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=Xzg1MWppYzFnNjkxamliOWg3MTIzZ2I5azhsMWs0YmExODkzMzhiOW02Z3FqY2M5ZzYxMGs0Y2hvOGdfMjAyNTA3MDZUMDEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 地毯教室" href="https://www.google.com/calendar/event?eid=XzZwMzNnaGEyNm9wNGNiYTY4aDFrNmI5azg0cDNpYmEyODhwazJiOW84bDMzNGc5bzZjb2ppY3E1NzBfMjAyNTA3MDlUMTEwMDAwWiBpY29jLm9yZy50d19ianExMHNtdjZsamcybWI4NmxmamZ0dTN0a0Bn" style="background-color:#6C6C6D;border-color:#6C6C6D;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=Xzhnc2phZDlrNnNyMzJiYTY4NHEzNGI5azc1MGpnYmEyNmdxajJiYTQ2c280YWNxMjYwbzRhZGhoNjBfMjAyNTA3MDZUMDEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">上午9點00分</span> <span class="fc-title">南區主日</span></div></a></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end 咖啡區" href="https://www.google.com/calendar/event?eid=cDludTZjMTg4dDI1dGgydDlrajNkampxc29fMjAyNTA3MDlUMTEwMDAwWiBpY29jLm9yZy50d183dmFwZ3BzNDZvdHZtZnRmdmpxOWozaHJpb0Bn" style="background-color:#73a839;border-color:#73a839;color:white"><div class="fc-content"><span class="fc-time">晚上7點00分</span> <span class="fc-title">南區HC</span></div></a></td></tr></tbody></table></div></div></div></div></td></tr></tbody></table></div></div></div>
+              <div class="clearfix"></div>
+    				</div>
+    			</div>
+    		</div>
+    		<!--/span-->
+    	</div><!--/row-->
+			<!-- content ends -->
+		</div><!--/#content.col-md-0-->
+			
+	</div><!--/fluid-row-->
+	
+	<hr>
+	
+		<footer class="row">		
+	    <p class="col-md-9 col-sm-9 col-xs-12 copyright">© <a href="https://www.taiwanchurch.org.tw" target="_blank">台灣國際基督教會</a>2016</p>
+	
+	    <!--<p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
+	            href="http://usman.it/free-responsive-admin-template">Charisma</a></p>-->
+	</footer>
+</div><!--/.fluid-container-->
+
+
+<!-- external javascript -->
+
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.1.1/js/responsive.jqueryui.min.js"></script>
+
+<!-- library for cookie management -->
+<script src="js/jquery.cookie.js"></script>
+<!-- data table plugin -->
+<!--<script src='js/jquery.dataTables.min.js'></script>-->
+
+<!-- select or dropdown enhancer -->
+<script src="bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notification plugin -->
+<script src="js/jquery.noty.js"></script>
+<!-- library for making tables responsive -->
+<!--<script src="bower_components/responsive-tables/responsive-tables.js"></script>-->
+<!-- tour plugin -->
+<script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+<!-- star rating plugin -->
+<script src="js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+<script src="js/jquery.uploadify-3.1.min.js"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="js/charisma.js"></script>
+
+<!-- toastr v2.1.4 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<script>
+	toastr.options = {
+  		// �ѼƳ]�w[��1]
+  		"closeButton": false, // ����������s
+  		"debug": false, // ����
+  		"newestOnTop": false,  // �̷s�@����ܦb�̤W��
+  		"progressBar": true, // ������îɶ��i�ױ�
+  		"positionClass": "toast-top-full-width", // ��m�����O
+  		"preventDuplicates": false, // ���í��аT��
+  		"onclick": null, // ���I�ﴣ�ܰT���ɡA�h���榹�禡
+  		"showDuration": "5000", // ��ܮɶ�(���: �@��)
+  		"hideDuration": "1000", // ���îɶ�(���: �@��)
+  		"timeOut": "5000", // ���W�L���]�w�ɶ��ɡA�h���ô��ܰT��(���: �@��)
+  		"extendedTimeOut": "1000", // ���ϥΪ�Ĳ�I�촣�ܰT���ɡA���}��W�L���]�w�ɶ��h���ô��ܰT��(���: �@��)
+  		"showEasing": "swing", // ��ܰʵe�ɶ����u
+  		"hideEasing": "linear", // ���ðʵe�ɶ����u
+  		"showMethod": "fadeIn", // ��ܰʵe�ĪG
+  		"hideMethod": "fadeOut" // ���ðʵe�ĪG
+  	}
+</script>
+
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94fae07e4ce05706',t:'MTc0OTkxNTExMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body>
