@@ -17,7 +17,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js"></script>
-
+  
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -40,43 +40,6 @@
           title: 'Long Event',
           start: '2025-04-07',
           end: '2025-04-10'
-        },
-        {
-          groupId: '999',
-          title: 'Repeating Event',
-          start: '2025-04-09T16:00:00'
-        },
-        {
-          groupId: '999',
-          title: 'Repeating Event',
-          start: '2025-04-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2025-04-11',
-          end: '2025-04-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2025-04-12T10:30:00',
-          end: '2025-04-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2025-04-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2025-04-12T14:30:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2025-04-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'https://google.com/',
-          start: '2025-04-28'
         }
       ]
     });
@@ -85,6 +48,59 @@
   });
 
 </script>
+  
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+    		header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				theme: true,
+				selectable: true,
+				eventLimit: true, // allow "more" link when too many events    		
+        googleCalendarApiKey: 'AIzaSyCrOoIlHA6C8dvQ12XAvoARHZZ5pSWdzLA',
+        eventSources: [            
+            {
+                googleCalendarId: 'icoc.org.tw_309aj8t07vhtlbrv2cejn32jvg@group.calendar.google.com',
+                className: '主堂',
+                color: '#c71c22',
+                textColor: 'white'
+            },
+            {
+                googleCalendarId: 'icoc.org.tw_7vapgps46otvmftfvjq9j3hrio@group.calendar.google.com',
+                className: '咖啡區',
+                color: '#73a839',
+                textColor: 'white'
+            },
+            {
+                googleCalendarId: 'icoc.org.tw_bjq10smv6ljg2mb86lfjftu3tk@group.calendar.google.com',
+                className: '地毯教室',
+                color: '#6C6C6D',
+                textColor: 'white'
+            },
+            {
+                googleCalendarId: 'icoc.org.tw_e7gd30fsevdd81930r99frpfmo@group.calendar.google.com',
+                className: '角落教室',
+                color: '#033c73',
+                textColor: 'white'
+            }            
+        ],
+        
+        
+        eventClick: function(calEvent, jsEvent, view) {	        
+	        if (calEvent.url) {
+            window.open(calEvent.url);
+            return false;
+        	}
+		    }
+    });
+});
+
+</script>
+
 </head>
 <body>
   <div id='calendar'></div>
