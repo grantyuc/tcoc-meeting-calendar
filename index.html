@@ -28,36 +28,40 @@
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
-      eventSources: [            
-        {
-	      	googleCalendarApiKey: 'AIzaSyDElfttrfPu7t3jpCA2Erai53QSUNEhBWY',
-		  	  googleCalendarId: 'c8e1b0503895a6f995906c06d3a96d87261271abcb5861b8c76a52eab4f7a95b@group.calendar.google.com',
-				  className: '台中-Amen Hall',
-				  color: '#c71c22',
-				  textColor: 'white'
-        },
-        {
-	      	googleCalendarApiKey: 'AIzaSyDElfttrfPu7t3jpCA2Erai53QSUNEhBWY',
-				  googleCalendarId: '64e5889aa82f0653f1134a7c2003c7cdcd2c3a63a397a4e38cdeef712d8baef6@group.calendar.google.com',
-				  className: '台中-Blessing Room',
-				  color: '#73a839',
-				  textColor: 'white'
-        },
-        {
-	      	googleCalendarApiKey: 'AIzaSyDElfttrfPu7t3jpCA2Erai53QSUNEhBWY',
-				  googleCalendarId: '7ce67b8c315cb79b566d6bcbad8acba47984dac54be711584f64a8cf6f2d8ec8@group.calendar.google.com',
-				  className: '台中-Cross Room',
-				  color: '#6C6C6D',
-				  textColor: 'white'
-        },
-        {
-	      	googleCalendarApiKey: 'AIzaSyDElfttrfPu7t3jpCA2Erai53QSUNEhBWY',
-				  googleCalendarId: '4116bcc17d9ba13bea65116f1508b3a8badcfdfce36fa03f31a526a12d6e0c60@group.calendar.google.com',
-				  className: '台中-Disciple Room',
-				  color: '#033c73',
-				  textColor: 'white'
-        }            
-      ],
+			events: {
+				googleCalendarApiKey: 'AIzaSyDElfttrfPu7t3jpCA2Erai53QSUNEhBWY',
+		    googleCalendarId: 'c8e1b0503895a6f995906c06d3a96d87261271abcb5861b8c76a52eab4f7a95b@group.calendar.google.com'
+			},
+      // eventSources: [            
+      //   {
+	     //  	googleCalendarApiKey: 'AIzaSyDElfttrfPu7t3jpCA2Erai53QSUNEhBWY',
+		  	 //  googleCalendarId: 'c8e1b0503895a6f995906c06d3a96d87261271abcb5861b8c76a52eab4f7a95b@group.calendar.google.com',
+				  // className: '台中-Amen Hall',
+				  // color: '#c71c22',
+				  // textColor: 'white'
+      //   },
+      //   {
+	     //  	googleCalendarApiKey: 'AIzaSyDElfttrfPu7t3jpCA2Erai53QSUNEhBWY',
+				  // googleCalendarId: '64e5889aa82f0653f1134a7c2003c7cdcd2c3a63a397a4e38cdeef712d8baef6@group.calendar.google.com',
+				  // className: '台中-Blessing Room',
+				  // color: '#73a839',
+				  // textColor: 'white'
+      //   },
+      //   {
+	     //  	googleCalendarApiKey: 'AIzaSyDElfttrfPu7t3jpCA2Erai53QSUNEhBWY',
+				  // googleCalendarId: '7ce67b8c315cb79b566d6bcbad8acba47984dac54be711584f64a8cf6f2d8ec8@group.calendar.google.com',
+				  // className: '台中-Cross Room',
+				  // color: '#6C6C6D',
+				  // textColor: 'white'
+      //   },
+      //   {
+	     //  	googleCalendarApiKey: 'AIzaSyDElfttrfPu7t3jpCA2Erai53QSUNEhBWY',
+				  // googleCalendarId: '4116bcc17d9ba13bea65116f1508b3a8badcfdfce36fa03f31a526a12d6e0c60@group.calendar.google.com',
+				  // className: '台中-Disciple Room',
+				  // color: '#033c73',
+				  // textColor: 'white'
+      //   }            
+      // ],
 
       eventClick: function(calEvent, jsEvent, view) {	        
 				if (calEvent.url) {
